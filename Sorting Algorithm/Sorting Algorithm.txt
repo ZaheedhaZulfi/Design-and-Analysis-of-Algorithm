@@ -1,0 +1,76 @@
+1.
+%selection sort
+
+arr = [64, 25, 12, 22, 11]; % Example array
+n = length(arr);
+
+for i = 1:n-1
+    minIndex = i;
+    for j = i+1:n
+        if arr(j) < arr(minIndex)
+            minIndex = j;
+        end
+    end
+    % Swap elements
+    if minIndex ~= i
+        temp = arr(i);
+        arr(i) = arr(minIndex);
+        arr(minIndex) = temp;
+    end
+end
+
+disp('Sorted array:');
+disp(arr);
+
+output:
+Sorted array:
+    11    12    22    25    64
+
+2.
+%Bubble sort
+arr = [64, 34, 25, 12, 22, 11,90]; 
+
+n=length(arr);
+disp(arr);
+
+for  i=1:n-1
+    for j=1:n-i
+        if arr(j) >arr(j+1)
+            %swap element
+               temp=arr(j);
+               arr(j)=arr(j+1);
+               arr(j+1)=temp;
+       end 
+   end
+end
+%display array state at each step
+     fprintf("Sorted array\n");
+     
+     disp(arr);
+
+3.
+%insertion sort
+
+arr = [9, 5, 3, 8, 2, 6, 1, 7, 4];
+
+% Get the length of the array
+n = length(arr);
+
+% Insertion Sort algorithm
+for i = 2:n
+    key = arr(i);
+    j = i - 1;
+    
+    % Move elements of arr[0..i-1], that are greater than key,
+    % to one position ahead of their current position
+    while j > 0 && arr(j) > key
+        arr(j + 1) = arr(j);
+        j = j - 1;
+    end
+    
+    arr(j + 1) = key;
+end
+
+% Display sorted array
+disp('Sorted array:');
+disp(arr);
